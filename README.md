@@ -8,7 +8,7 @@ This version supports Flashforge Creator Pro 2.  It supports only single extrusi
 
 Disable the unused extruder before slicing to prevent heating and ozzing. 
 
-Extruder 0 is RIGHT, extruder 1 is LEFT on the printer. In Cura extruder 1 is right and extruder 2 is left. 
+Extruder 0 is right, extruder 1 is left on the printer. In Cura extruder 1 is right and extruder 2 is left. 
 
 Please, carefully read both Installation and Post Install sections below.
 
