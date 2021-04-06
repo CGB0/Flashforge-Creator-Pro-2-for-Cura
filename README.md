@@ -24,7 +24,7 @@ It is based on Eugr's Cura profile on GitHub: https://github.com/eugr/Flashforge
 
 I forked Eugr's repo, modified his definitions files so they fit within the build size of the Creator Pro 2, changed names etc so they all refer to the Creator Pro 2 and will not get mixed up if you happen to have an original FFCP and a FFCP2.
 
-Like Eugr's this is based on the actually hardware parameters for the FFCP2 so there should be no crashing and mangling.
+Like Eugr's this is based on the actually hardware parameters for the FFCP2 so there should be no crashing and mangling. The start and end gcode for this printer is completely different from FFCP
 
 This printer does not appear to do relative extrusion.  If you send M83 to put the machine into relative extrusion the machine seems to go a bit catatonic and needs a reboot
 
