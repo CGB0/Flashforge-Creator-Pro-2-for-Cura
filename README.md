@@ -2,59 +2,42 @@
 
 ## Important - please read first!
 
-_Feb 14, 2020_
+_April 6, 2021_
 
-This version supports both single and dual extrusion. Dual extrusion requires Cura 4.5 BETA or higher. It may work with 4.4.1 but there is a bug that may result in choosing incorrect tool for the skirt/brim/raft. It was fixed in Cura 4.5-beta.
+This version supports Flashforge Creator Pro 2.  It supports only single extrusion by either extruder. It was developed and tested on Cura 4.8 and on a FlashForge Creator Pro 2 on left and right extruders
 
-Tested on FlashForge Creator Pro on left, right and both extruders, and users also report compatibility with Creator X.
+Disable the unused extruder before slicing to prevent heating and ozzing. 
 
-PLEASE UPDATE TO THE NEWEST VERSION! 
-
-If using only SINGLE nozzle, please DISABLE UNUSED EXTRUDER before slicing to avoid heating up both nozzles and printing brim/skirt/raft with a different extruder!
-When using dual extrusion it's recommended to use ooze shield. Also use prime tower for the cleanest result, but it will significantly increase printing time and result in many tool changes due to dual extrusion implementation in Cura.
-
-Remember - Extruder 1 is RIGHT, Extruder 2 is LEFT! 
+Extruder 0 is RIGHT, extruder 1 is LEFT on the printer. In Cura extruder 1 is right and extruder 2 is left. 
 
 Please, carefully read both Installation and Post Install sections below.
 
 ## Changelog
 
-v0.6 (Feb 16, 2020) - Implemented extruder offset to aid Cura in path computation (wipe the inactive nozzle, etc), tweaked ooze shield parameters and tool change position.
-
-v0.5 (Feb 14, 2020) - DUAL extrusion support!
-
-v0.4 (Feb 1, 2020) - Linux support in install script (thanks @toluschr)
-
-v0.3 (Jan 25, 2020) - Decreased first layer speed to 15 mm/s for even better adhesion. You can override that in settings.
-
-v0.2 (Jan 24, 2020) - Fixed bug with incorrect init/wipe code for right extruder. Slowed down default initial layer speed to 20 mm/s for better adhesion.
-
-v0.1 (Jan 22, 2020) - Initial commit
+v0.1 (April 6, 2021) - Initial commit
 
 ## Description
 
-This is a complete functional Cura profile for FlashForge Creator Pro. Tested with Cura 4.4.1 (single only) and 4.5-beta (single and dual).
+This is a Cura profile for FlashForge Creator Pro 2. Tested with Cura 4.8 with each extruder to ensure that they both work.
 
-Inspired by and based on the following work:
+It is based on Eugr's Cura profile on GitHub: https://github.com/eugr/Flashforge-for-Cura
 
-1. Toylerrr's Cura profile on GitHub: https://github.com/Toylerrr/Flashforge-for-Cura
+I forked Eugr's repo, modified his definitions files so they fit within the build size of the Creator Pro 2, changed names etc so they all refer to the Creator Pro 2 and will not get mixed up if you happen to have an original FFCP and a FFCP2.
 
-I forked the repo, but ended up reimplementing all profiles more or less completely from scratch. But it was a good starting point.
+Like Eugr's this is based on the actually hardware parameters for the FFCP2 so there should be no crashing and mangling.
 
-2. Lyl3's profile on Thingiverse: https://www.thingiverse.com/thing:3569113
+This printer does not appear to do relative extrusion.  If you send M83 to put the machine into relative extrusion the machine seems to go a bit catatonic and needs a reboot
 
-I took his start/stop GCode scripts, which are in turn based on Simplify3D start/stop scripts, so I had a high confidence that they would work well. I cleaned them up a bit and made a single but important modification that allows to use the same script for either left or right extruder (or both at the same time), so you don't have to change it when you change the active extruder or use dual extrusion. 
+I am not sure that the printer likes x3g code.  The .gx files flashforge puts out are a bit of binary to perhaps show an icon on the touch screen but the rest of the file is straight gcode.  Therefore I only export gcode. Your mileage may vary. 
 
-3. Simplify3D parameters.
-
-4. Hardware parameters found in GPX tool source code.
-
-It is pretty much plug-n-play. The major improvement compared to all other profiles mentioned above, is that it is based on the actual hardware parameters for FFCP, so it won't crash the bed to the floor (because the Z-limit direction is set correctly), for example. It will also use relative extrusion mode - this is what Simplify3D and FlashPrint use.
 
 ## Installation
 
 ### Before you begin
 
+.....................................................................................................
+...These instructions are take directly from Eugr's instructions with minor version modifications....
+.....................................................................................................
 Please download ZIP file and unzip it somewhere on your hard drive. Alternatively you can use `git clone` to checkout the repository.
 
 There are two ways to install the application - into user folder (preferred) and application package itself. Installing into user folder will allow it to survive application updates, but if you have multiple user accounts on your Mac or PC, each user will need to install the profile separately as it will not be visible to all users. In this case you can use alternative method to install the profile globally, however it will not survive application update as application folder will be rewritten during update.
@@ -63,7 +46,7 @@ There are two ways to install the application - into user folder (preferred) and
 
 #### Note for MacOS users
 
-If you save the sliced model as x3g (default for FFCP) and you get an empty file, follow the steps described in this issue to install the required libraries: https://github.com/haskell/haskell-platform/issues/231#issuecomment-177530716
+If you save the sliced model as x3g (default for FFCP) and you get an empty file, follow the steps described in this issue to install the required libraries: https://github.com/haskell/haskell-platform/issues/231#issuecomment-177530716  
 
 Or alternatively forget about X3G and use gcode with Octoprint!
 
@@ -78,7 +61,7 @@ The easiest way is to use the supplied script. The script will attempt to instal
 
 Alternatively, you can do it manually:
 
-1. Open Cura library folder located at `/Users/your_username/Library/Application\ Support/cura/4.4/` (for 4.4.x, for later versions it will be different). 
+1. Open Cura library folder located at `/Users/your_username/Library/Application\ Support/cura/4.8/` (for 4.8.x, for later versions it will be different). 
 2. Copy files from definitions, extruders and meshes folders from the downloaded ZIP file (or cloned repository) into the respective folders in Cura. You may need to create `meshes` folder first.
 3. Perform steps from post-install section below.
 
@@ -98,7 +81,7 @@ Change to unzipped folder and run `bash ./install.sh`
 
 This is a preferred way as it should survive application updates.
 
-1. Open Cura library folder located at `C:\Users\your_username\AppData\Roaming\cura\4.4` (for 4.4.x, for later versions it will be different). 
+1. Open Cura library folder located at `C:\Users\your_username\AppData\Roaming\cura\4.8` (for 4.8.x, for later versions it will be different). 
 2. Copy files from definitions, extruders and meshes folders from the downloaded ZIP file (or cloned repository) into the respective folders in Cura. You may need to create `meshes` folder first.
 3. Perform steps from post-install section below.
 
@@ -116,8 +99,10 @@ This is a preferred way as it should survive application updates.
 
 BEFORE SLICING, DISABLE UNUSED EXTRUDER if using just one nozzle!
 
-Remember, that that extruder 1 is right and extruder 2 is left. The easiest way to disable/enable specific extruder is to go to Settings menu and do it from there as they are named properly in it. 
+Remember, that in Cura extruder 1 is right and extruder 2 is left. In the gcode extruder 0 is the right extruder and extruder 1 is the left extruder.   The easiest way to disable/enable specific extruder is to go to Settings menu and do it from there as they are named properly in it. 
 
 Please open an issue if you find a bug or something is not working.
+
+Not sure if I will get dual extruding going or not. Right now I don't have a need.  
 
 
