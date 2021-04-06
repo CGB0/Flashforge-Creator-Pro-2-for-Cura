@@ -30,6 +30,12 @@ This printer does not appear to do relative extrusion.  If you send M83 to put t
 
 I am not sure that the printer likes x3g code.  The .gx files flashforge puts out are a bit of binary to perhaps show an icon on the touch screen but the rest of the file is straight gcode.  Therefore I only export gcode. Your mileage may vary. 
 
+This profile should be plug and play.  It has the required gcode in the definitions/creator_pro_2.def.json file.  As soon as you load it in cura it should be ready to go.  
+
+There is a PETG profile provided that you can load as well.  You may think the temps are a bit cool but the PETG I have only needs 200C and above that it is very stringy.
+The profile has a value of 105.263 for the Flow Rate Compensation Factor which fixes a slight under extrusion problem with my printer.  You should verify your extrusion rate. 
+
+
 
 ## Installation
 
