@@ -35,9 +35,11 @@ I am not sure that the printer likes x3g code.  The .gx files flashforge puts ou
 
 ### Before you begin
 
-.....................................................................................................\n
-...These instructions are take directly from Eugr's instructions with minor version modifications....\n
-.....................................................................................................\n
+.....................................................................................................
+
+...These instructions are take directly from Eugr's instructions with minor version modifications....
+
+.....................................................................................................
 
 Please download ZIP file and unzip it somewhere on your hard drive. Alternatively you can use `git clone` to checkout the repository.
 
