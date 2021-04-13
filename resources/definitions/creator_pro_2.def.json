@@ -5,7 +5,7 @@
     "inherits": "fdmprinter",
     "metadata": {
         "visible": true,
-        "author": "CGB0",
+        "author": "cgb001",
         "manufacturer": "FlashForge",
         "platform": "FlashForge_CreatorPro2.stl",        
         "file_formats": "application/gcode",
