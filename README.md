@@ -1,4 +1,4 @@
-# Flashforge for Cura
+# Flashforge Creator Pro 2 for Cura
 
 ## Important - please read first!
 
