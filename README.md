@@ -4,6 +4,8 @@
 
 _April 6, 2021_
 
+Use at your own risk. Do not mix Gcode between versions.  You will break things. 
+
 This version supports Flashforge Creator Pro 2.  It supports only single extrusion by either extruder. It was developed and tested on Cura 4.8 and on a FlashForge Creator Pro 2 on left and right extruders
 
 Disable the unused extruder before slicing to prevent heating and ozzing. 
@@ -13,6 +15,8 @@ Extruder 0 is right, extruder 1 is left on the printer. In Cura extruder 1 is ri
 Please, carefully read both Installation and Post Install sections below.
 
 ## Changelog
+
+v0.2 (April 13,2021) - Added a new printer defintion _creator_pro_2.Tall.def.json_  which extends the printing height to 165mm.  You could theoretically extend it to 170mm   The Gcode is in the profile. The Start-Code is the same for both printers.  The stop code is not the same.   Do not use the stop code from first version on the second version or you will might drive your models up into your extruders if they don't get out of the way. 
 
 v0.1 (April 6, 2021) - Initial commit
 
