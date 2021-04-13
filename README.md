@@ -16,7 +16,7 @@ Please, carefully read both Installation and Post Install sections below.
 
 ## Changelog
 
-v0.2 (April 13,2021) - Added a new printer defintion _creator_pro_2.Tall.def.json_  which extends the printing height to 165mm.  You could theoretically extend it to 170mm   The Gcode is in the profile. The Start-Code is the same for both printers.  The stop code is not the same.   Do not use the stop code from first version on the second version or you will might drive your models up into your extruders if they don't get out of the way. 
+v0.2 (April 13,2021) - Added a new printer defintion _creator_pro_2.Tall.def.json_  which extends the printing height to 165mm.  You could theoretically extend it to 170mm   The Gcode is in the profile. The Start-Code is the same for both printers.  The stop code is not the same.   Do not use the stop code from first version on the second version or you will might drive your models up into your extruders if they don't get out of the way and you have printed over 150mm. 
 
 v0.1 (April 6, 2021) - Initial commit
 
